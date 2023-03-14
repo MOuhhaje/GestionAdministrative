@@ -5,6 +5,12 @@ use App\Http\Controllers;
 use App\Http\Kernel;
 use App\Models\Filiere;
 
+
+/* $validators = IlluminateRoute::getValidators();
+$validators[] = new UriValidat;
+IlluminateRoute::$validators = array_filter($validators, function($validator) { 
+  return get_class($validator) != UriValidator::class;
+}); */
 /*
 |--------------------------------------------------------------------------
 | Web Routes

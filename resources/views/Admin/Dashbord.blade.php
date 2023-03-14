@@ -116,7 +116,7 @@
                                 <p>{{ $ins->Prenom.' '.$ins->Nom }}</p>
                             </td>
                             <td>{{ date("Y-m-d",strtotime($ins->created_at)); }}</td>
-                            <?php 
+                            @php
                                 $v=''; 
                                 if($ins->Status=='Refuse'){
                                     $v='pending';
@@ -125,7 +125,7 @@
                                 }else {
                                     $v='process';
                                 }
-                            ?>
+                            @endphp
                             <td><span class="status {{ $v }}">{{ $ins->Status }}</span></td>                           
                         </tr>
                     @endforeach
