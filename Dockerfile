@@ -19,19 +19,16 @@ RUN composer install \
     --optimize-autoloader \
     --ignore-platform-reqs \
     --no-scripts
-    # --audit-no-dev
 
 RUN chown -R www-data:www-data /var/www/html/storage \
     && chown -R www-data:www-data /var/www/html/bootstrap/cache
 
-ENV APACHE_DOCUMENT_ROOT /var/www/html/public
-
 RUN sed -ri -e 's!/var/www/html!/var/www/html/public!g' \
     /etc/apache2/sites-available/*.conf
 
-RUN a2dismod mpm_event \
-    && a2dismod mpm_worker \
-    && a2enmod mpm_prefork
 RUN a2enmod rewrite
 
-EXPOSE 80
+COPY start.sh /start.sh
+RUN chmod +x /start.sh
+
+CMD ["/start.sh"]
