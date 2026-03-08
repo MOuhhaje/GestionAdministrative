@@ -18,8 +18,8 @@ RUN composer install \
     --no-dev \
     --optimize-autoloader \
     --ignore-platform-reqs \
-    --no-scripts \
-    -vvv
+    --no-scripts
+    --audit-no-dev
 
 RUN chown -R www-data:www-data /var/www/html/storage \
     && chown -R www-data:www-data /var/www/html/bootstrap/cache
