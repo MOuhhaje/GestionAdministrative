@@ -30,5 +30,6 @@ RUN sed -ri -e 's!/var/www/html!/var/www/html/public!g' \
     /etc/apache2/sites-available/*.conf
 
 RUN a2enmod rewrite
+RUN a2dismod mpm_prefork && a2enmod mpm_event
 
 EXPOSE 80
