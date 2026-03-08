@@ -16,9 +16,9 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('Agents')->insert([
-            'Matricule' => 'M1000',
-            'Password' => Hash::make('mouhhaje'),
-        ]);
+        // DB::table('Agents')->insert([
+        //     'Matricule' => 'M1000',
+        //     'Password' => Hash::make('mouhhaje'),
+        // ]);
     }
 }
